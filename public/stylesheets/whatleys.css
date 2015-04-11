@@ -1,0 +1,21 @@
+body#body-index {
+  margin: 0;
+  background: url('/images/live.jpg');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -background-size: cover;
+}
+
+a#home-link {
+  height: 50px; 
+  font-size: 18px;
+}
+
+#upcoming-shows-pane {
+  background-color: #EFEFEF; 
+  min-height: 200px; 
+  border-radius: 10px;
+}
+

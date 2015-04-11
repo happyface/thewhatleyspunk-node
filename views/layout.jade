@@ -1,0 +1,116 @@
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(name="description", content="#")
+    meta(name="author", content="#")
+    title=title
+    link(rel='shortcut icon' href='/images/whatleys_fav.jpg')
+    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='/stylesheets/whatleys.css', type='text/css')
+
+  block body
+    body#body-index
+
+  div.navbar.navbar-inverse.navbar-static-top
+    div.navbar-header
+      button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+        span.sr-only: Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    div.collapse.navbar-collapse#navbar
+        ul.nav.navbar-nav#tabs
+          li.active
+            a#home-link(href="/home") The Whatleys
+          li
+            a(href="/upcomingshows") Upcoming Shows
+          li
+            a(href="/music") Music
+          li
+            a(href="/thebros") The Bros
+          li
+            a(href="/history") History Lesson
+          li
+            a(href="/contact") Contact
+              ul.nav.navbar-nav.navbar-right
+            li
+              if user
+                p Welcome, #{user.fullName}
+                p
+                  a.small(href="profile") Edit my profile
+                  a.btn.btn-primary(href="/logout") Logout
+              else
+                p Welcome to my app, ready to get started?
+                p
+                  a.btn.btn-primary(href="/login") Login now
+                p
+                  span.small Don't have an account?
+                  span &nbsp;
+                    a.small(href="/register") Register now
+  div.container
+    div.row
+      div.col-lg-1.col-lg-offset-8
+        a(href="https://www.facebook.com/thewhatleys" target="_blank") Facebook
+      div.col-lg-1(style="text-align: center;")
+        a(href="http://www.reverbnation.com/thewhatleys" target="_blank") Reverb Nation
+      div.col-lg-1
+        a(href="https://twitter.com/thewhatleyspunk" target="_blank") Twitter
+      div.col-lg-1(style="text-align: center;")
+        a(href="http://whatleys.bandcamp.com/" target="_blank") Band Camp
+    div.tab-content
+      div.tab-pane#upcomingshows
+        img.bg(src="/images/black.jpg")
+        div.col-md-3#upcoming-shows-pane
+          Probably sometime in March
+      div.tab-pane#music
+        div.col-sm-8
+          iframe(width="600" height="338" src="http://www.youtube.com/embed/ozMn8P_NW6k" frameborder="0" allowfullscreen)
+      div.tab-pane#thebros
+        div.row
+          div.col-sm-5.col-md-3
+            div.thumbnail
+              img(src="/images/jim.jpg" alt="Jim")
+              div.caption
+                h3 Jim
+                p(style="height: 310px") Really enjoys chicken fingers
+                br
+                br
+                p.text-center
+                 a.btn.btn-primary(href="http://www.twitter.com/TheOfficialBale" target="_blank" role="button") Jim Doesn't use Twitter
+          div.col-sm-5.col-md-3
+            div.thumbnail
+              img(src="/images/eddie.jpg" alt="Eddie")
+              div.caption
+                h3 Eddie
+                p(style="height: 143px;") Eddie play bass 'n play with puppies 'n stuff.
+                br
+                p Eddie's favorite band is Bad Religion.
+                p.text-center
+                  a.btn.btn-primary(href="http://www.twitter.com/TheFraudPunk" target="_blank" role="button") Follow Eddie on Twitter
+          div.col-sm-5.col-md-3
+            div.thumbnail
+              img(src="/images/tj.jpg" alt="TJ")
+              div.caption
+                h3 TJ
+                p(style="height: 140px;") The Rowdy, Roddy Piper of guitar playing.
+              p He's fun to watch and sometimes he wears a skirt.
+              p.text-center
+                a.btn.btn-primary(href="http://www.twitter.com/tjfadehawk" target="_blank" role="button") Follow TJ on Twitter
+        div.col-sm-5.col-md-3
+          div.thumbnail
+            img(src="/images/hiro.jpg" alt="Hiro")
+            div.caption
+              h3 Hiro
+              p(style="height: 100px;") The token Asian and samurai of punk rock guitar.  His leads may not be as sharp as his sword, but he'll cut it up all the same.
+              p.text-center
+                ai.btn.btn-primary(href="http://www.twitter.com/TheSamuraIrish" target="_blank" role="button") Follow Hiro on Twitter
+    div.tab-pane#history
+    div.tab-pane#contact Email us:
+      a(href="mailto:thewhatleyspunk@gmail.com") thewhatleyspunk@gmail.com
+
+    block content
+
+script(src="http://code.jquery.com/jquery.min.js")
+script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+script(src="/javascripts/tab.js")
